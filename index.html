@@ -48,7 +48,7 @@
           </div>
         </nav>
         <aside>
-          <input type="text"  name="input-field" name="input-field"/>
+          <input type="text"  name="input-field" id="input-field"/>
         </aside>
       </header>
       <section class="body">
@@ -101,6 +101,110 @@
         document.documentElement.setAttribute("data-theme", themes_switcher[index_themes-1]);
         list_btn_slider[index_themes-1].className += " active";
 
+    }
+
+
+    let inputField = document.querySelector('#input-field');
+     (e)=>{
+        let field = '';
+        if(e.key=='Enter'){alert('e.key')}
+        switch (e.key) {
+          case '1':
+            field += '1'
+            break;
+            
+          case '2':
+              field += '2'
+            break;
+          
+            case '3':
+             field += '3'
+            break;
+          
+          case '4':
+          field += '4'
+            
+            break;
+          
+            case '5':
+            field += '5'
+            
+            break;
+          
+          case '6':
+          field += '6'
+            
+            break;
+            case '7':
+            field += '7'
+            
+            break;
+          
+          case '8':
+          field += '8'
+            
+            break;
+          
+          case '9':
+          field += '9'
+            
+            break;
+          
+          case '0':
+          field += '0'
+            
+            break;
+          
+          case '+':
+          field += '+'
+            break;
+          
+          case 'x':
+            field += '*'
+            
+            break;
+          
+          case 'X':
+          field += '*'
+            break;
+          
+          case '*':
+          field += '*'
+            break;
+          
+          case '/':
+          field += '/'
+            break;
+          
+          case '-':
+          field += '-'
+            break;
+
+          default:
+            break;
+        }
+    }
+
+
+
+      function containtWrongNumber(cvc) {
+          if (checkNumberFormat(cvc.value)) {
+              return false;
+          }   
+              
+              return true;
+      }
+
+    function checkNumberFormat(number) {
+    
+        const regex = new RegExp("[a-zA-Z\W//]"); 
+        // console.log("pattern find "+ number+" = "+ regex.test(number));
+        if (regex.test(number)){
+            // console.log("good"+number);
+            return false;
+        }
+        // console.log("fake"+number);
+        return true;
     }
   </script>
 </html>
