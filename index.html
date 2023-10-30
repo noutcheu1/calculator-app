@@ -55,21 +55,21 @@
           <button class="btn">7</button>
           <button class="btn">8</button>
           <button class="btn">9</button>
-          <button class="btn exception1">DEL</button>
+          <button class="btn exception1" data-action="delete">DEL</button>
           <button class="btn">4</button>
           <button class="btn">5</button>
           <button class="btn">6</button>
-          <button class="btn">+</button>
+          <button class="btn"data-action="addition">+</button>
           <button class="btn">1</button>
           <button class="btn">2</button>
           <button class="btn">3</button>
-          <button class="btn">-</button>
-          <button class="btn">.</button>
+          <button class="btn" data-action="substraction">-</button>
+          <button class="btn" data-action="decimal">.</button>
           <button class="btn">0</button>
-          <button class="btn">/</button>
-          <button class="btn">x</button>
-          <button class="btn btn-lg exception1">RESET</button>
-          <button class="btn btn-md exception">=</button>
+          <button class="btn" data-action="divide">÷</button>
+          <button class="btn" data-action="multiply">&times;</button>
+          <button class="btn btn-lg exception1" data-action="reset">RESET</button>
+          <button class="btn btn-md exception" data-action="equal">=</button>
         
       </section>
       <div class="attribution">
@@ -80,131 +80,6 @@
       </div>
     </main>
   </body>
-  <script>
-    function showtheme(index_themes){
-        let index_themes_current;
-        let list_btn_slider = document.querySelectorAll('.slider-box')
-        let themes_switcher = ['theme1', 'theme2', 'theme3']
-        if (index_themes > themes_switcher.length){
-          index_themes_current = 1
-        }
-        if( index_themes < 0){
-          index_themes_current = themes_switcher.length
-        }
-
-        for(let i=0; i < list_btn_slider.length; i++){
-          list_btn_slider[i].className = list_btn_slider[i].className.replace(" active", "")  
-          
-        }
-        console.log(index_themes);
-        // list_btn_slider[index_themes_current-1].style.display = "grid"
-        document.documentElement.setAttribute("data-theme", themes_switcher[index_themes-1]);
-        list_btn_slider[index_themes-1].className += " active";
-
-    }
-
-
-    let inputField = document.querySelector('#input-field');
-     (e)=>{
-        let field = '';
-        if(e.key=='Enter'){alert('e.key')}
-        switch (e.key) {
-          case '1':
-            field += '1'
-            break;
-            
-          case '2':
-              field += '2'
-            break;
-          
-            case '3':
-             field += '3'
-            break;
-          
-          case '4':
-          field += '4'
-            
-            break;
-          
-            case '5':
-            field += '5'
-            
-            break;
-          
-          case '6':
-          field += '6'
-            
-            break;
-            case '7':
-            field += '7'
-            
-            break;
-          
-          case '8':
-          field += '8'
-            
-            break;
-          
-          case '9':
-          field += '9'
-            
-            break;
-          
-          case '0':
-          field += '0'
-            
-            break;
-          
-          case '+':
-          field += '+'
-            break;
-          
-          case 'x':
-            field += '*'
-            
-            break;
-          
-          case 'X':
-          field += '*'
-            break;
-          
-          case '*':
-          field += '*'
-            break;
-          
-          case '/':
-          field += '/'
-            break;
-          
-          case '-':
-          field += '-'
-            break;
-
-          default:
-            break;
-        }
-    }
-
-
-
-      function containtWrongNumber(cvc) {
-          if (checkNumberFormat(cvc.value)) {
-              return false;
-          }   
-              
-              return true;
-      }
-
-    function checkNumberFormat(number) {
-    
-        const regex = new RegExp("[a-zA-Z\W//]"); 
-        // console.log("pattern find "+ number+" = "+ regex.test(number));
-        if (regex.test(number)){
-            // console.log("good"+number);
-            return false;
-        }
-        // console.log("fake"+number);
-        return true;
-    }
-  </script>
+  <script src="Calculator.js"></script>
+  <script src="calculation.js"></script>
 </html>

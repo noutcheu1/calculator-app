@@ -101,7 +101,7 @@
     font-family: 'League', 'Spartan', monospace;
 }
 
-
+body
 .container{
     display: grid;
     grid-template-rows:  200px 1fr 40px;
